@@ -7,8 +7,8 @@ type Vehicle {
 }
 
 type Query {
-    vehicles(count: Int):[Vehicle]
-    vehicle(id: ID!):Vehicle
+    getVehicles(count: Int):[Vehicle]
+    getVehicle(id: ID!):Vehicle
 }
 
 type Mutation {

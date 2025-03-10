@@ -8,7 +8,7 @@ import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class VehicleMutation{
+public class VehicleMutationResolver {
 
     @Autowired
     private VehicleService vehicleService;

@@ -11,18 +11,18 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
-public class VehicleQuery{
+public class VehicleQueryResolver {
 
     @Autowired
     private VehicleService vehicleService;
 
     @QueryMapping
-    public List<Vehicle> getVehicles(final int count) {
+    public List<Vehicle> getVehicles(@Argument final int count) {
         return this.vehicleService.getAllVehicles(count);
     }
 
     @QueryMapping
-    public Optional<Vehicle> getVehicle(final int id) {
+    public Optional<Vehicle> getVehicle(@Argument final int id) {
         return this.vehicleService.getVehicleById(id);
     }
 }
