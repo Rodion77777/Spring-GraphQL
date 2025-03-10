@@ -1,24 +1,27 @@
 package microservice.module.springgraphql.query;
 
-import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import microservice.module.springgraphql.dao.entity.Vehicle;
 import microservice.module.springgraphql.service.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.graphql.data.method.annotation.Argument;
+import org.springframework.graphql.data.method.annotation.QueryMapping;
+import org.springframework.stereotype.Controller;
 
 import java.util.List;
 import java.util.Optional;
 
-@Component
-public class VehicleQuery implements GraphQLQueryResolver {
+@Controller
+public class VehicleQuery{
 
     @Autowired
     private VehicleService vehicleService;
 
+    @QueryMapping
     public List<Vehicle> getVehicles(final int count) {
         return this.vehicleService.getAllVehicles(count);
     }
 
+    @QueryMapping
     public Optional<Vehicle> getVehicle(final int id) {
         return this.vehicleService.getVehicleById(id);
     }

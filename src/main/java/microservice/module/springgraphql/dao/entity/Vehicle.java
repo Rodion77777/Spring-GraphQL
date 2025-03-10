@@ -1,9 +1,9 @@
 package microservice.module.springgraphql.dao.entity;
 
-import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import jakarta.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 
@@ -11,6 +11,7 @@ import java.time.LocalDate;
 @EqualsAndHashCode
 @Entity
 public class Vehicle implements Serializable {
+
     private static final long serialVersionUID = 1L;
 
     @Id
